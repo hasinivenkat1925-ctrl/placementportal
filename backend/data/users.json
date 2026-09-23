@@ -40,5 +40,23 @@
     "name": "hasini",
     "email": "hasini@gmail.com",
     "password": "has"
+  },
+  {
+    "id": 1790151908345,
+    "name": "Kavya",
+    "email": "skavya1@gmail.com",
+    "password": "1234"
+  },
+  {
+    "id": 1790153117669,
+    "name": "Venkat",
+    "email": "venky@gmail.com",
+    "password": "0987"
+  },
+  {
+    "id": 1790154687395,
+    "name": "chinnu",
+    "email": "chinnu@gmail.com",
+    "password": "12345"
   }
 ]
