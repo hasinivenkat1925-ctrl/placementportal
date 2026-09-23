@@ -1,0 +1,68 @@
+{
+  "tcs__python developer__conditional statements": {
+    "solutions": {
+      "topic": "Conditional Statements",
+      "solutions": [
+        {
+          "question": "What is Conditional Statements?",
+          "answer": "Conditional Statements is an important concept in computer science.",
+          "solution": "Study the basic definition, concepts and applications of Conditional Statements."
+        },
+        {
+          "question": "Why is Conditional Statements important?",
+          "answer": "Conditional Statements is useful for solving technical and programming problems.",
+          "solution": "Understanding Conditional Statements helps students answer placement and interview questions."
+        },
+        {
+          "question": "What are the basic concepts of Conditional Statements?",
+          "answer": "The basic concepts depend on the specific topic.",
+          "solution": "Start with the fundamental concepts of Conditional Statements and then move to advanced topics."
+        },
+        {
+          "question": "Where is Conditional Statements used?",
+          "answer": "Conditional Statements is used in software development and computer science applications.",
+          "solution": "Learn practical examples of Conditional Statements to understand where and how it is used."
+        },
+        {
+          "question": "How should a student prepare Conditional Statements for placements?",
+          "answer": "Study concepts and practice placement questions.",
+          "solution": "Review the fundamentals, solve practice questions and revise common interview problems related to Conditional Statements."
+        }
+      ],
+      "source": "fallback"
+    }
+  },
+  "tcs__python developer__arrays": {
+    "solutions": {
+      "topic": "Arrays",
+      "solutions": [
+        {
+          "question": "What is Arrays?",
+          "answer": "Arrays is an important concept in computer science.",
+          "solution": "Study the basic definition, concepts and applications of Arrays."
+        },
+        {
+          "question": "Why is Arrays important?",
+          "answer": "Arrays is useful for solving technical and programming problems.",
+          "solution": "Understanding Arrays helps students answer placement and interview questions."
+        },
+        {
+          "question": "What are the basic concepts of Arrays?",
+          "answer": "The basic concepts depend on the specific topic.",
+          "solution": "Start with the fundamental concepts of Arrays and then move to advanced topics."
+        },
+        {
+          "question": "Where is Arrays used?",
+          "answer": "Arrays is used in software development and computer science applications.",
+          "solution": "Learn practical examples of Arrays to understand where and how it is used."
+        },
+        {
+          "question": "How should a student prepare Arrays for placements?",
+          "answer": "Study concepts and practice placement questions.",
+          "solution": "Review the fundamentals, solve practice questions and revise common interview problems related to Arrays."
+        }
+      ],
+      "source": "fallback"
+    }
+  }
+}
