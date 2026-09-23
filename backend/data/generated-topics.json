@@ -64,5 +64,229 @@
       ],
       "source": "fallback"
     }
+  },
+  "wipro__java developer__company placement": {
+    "quiz": {
+      "topic": "Company Placement",
+      "questions": [
+        {
+          "question": "Which method of the Object class is used to compare the equality of two objects in Java?",
+          "options": [
+            "equals()",
+            "compareTo()",
+            "isEqual()",
+            "compare()"
+          ],
+          "answer": "equals()",
+          "explanation": "The equals() method is defined in the Object class to determine if two objects are logically equivalent, whereas '==' checks for reference equality."
+        },
+        {
+          "question": "What is the primary difference between a String and a StringBuilder in Java?",
+          "options": [
+            "String is mutable, StringBuilder is immutable",
+            "String is thread-safe, StringBuilder is not",
+            "String is immutable, StringBuilder is mutable",
+            "StringBuilder is slower than String"
+          ],
+          "answer": "String is immutable, StringBuilder is mutable",
+          "explanation": "String objects are immutable in Java, meaning they cannot be changed once created. StringBuilder is mutable, allowing for efficient modifications without creating new objects."
+        },
+        {
+          "question": "What is the output of 'System.out.println(10 + 20 + \"Wipro\");'?",
+          "options": [
+            "30Wipro",
+            "1020Wipro",
+            "1020",
+            "Error"
+          ],
+          "answer": "30Wipro",
+          "explanation": "Java evaluates expressions from left to right. It performs integer addition on 10 and 20 first, resulting in 30, and then concatenates the string 'Wipro'."
+        },
+        {
+          "question": "In the context of Wipro's Java interview, what is the 'final' keyword used for in a method declaration?",
+          "options": [
+            "To prevent the class from being instantiated",
+            "To prevent the method from being overridden",
+            "To ensure the method returns a constant value",
+            "To make the method accessible globally"
+          ],
+          "answer": "To prevent the method from being overridden",
+          "explanation": "A method declared as 'final' cannot be overridden by any subclass, providing a way to define an unchangeable implementation."
+        },
+        {
+          "question": "Which of these is the correct way to handle exceptions in Java to ensure resources like database connections are always closed?",
+          "options": [
+            "Only using try-catch blocks",
+            "Using the finally block",
+            "Using the throw keyword",
+            "Using the catch-all Exception class"
+          ],
+          "answer": "Using the finally block",
+          "explanation": "The finally block is guaranteed to execute regardless of whether an exception is thrown, making it the ideal place to perform cleanup operations like closing connections."
+        }
+      ],
+      "source": "ai"
+    }
+  },
+  "wipro__java developer__variables & data types": {
+    "notes": {
+      "topic": "Variables & Data Types",
+      "title": "Variables & Data Types - Placement Notes",
+      "introduction": "Essential study notes on Java Variables and Data Types tailored for Wipro Java Developer placement preparation.",
+      "sections": [
+        {
+          "heading": "Introduction to Variables",
+          "content": "A variable is a container that holds data during the execution of a Java program. Every variable in Java must be declared with a specific data type, which determines the type and size of the value it can hold. Java is a statically typed language, meaning all variables must be declared before they can be used."
+        },
+        {
+          "heading": "Types of Variables in Java",
+          "content": "Java has three main types of variables: 1. Local Variables: Declared inside methods, constructors, or blocks, and have local scope. 2. Instance Variables: Declared inside a class but outside any method, representing object-specific states. 3. Static Variables (Class Variables): Declared with the 'static' keyword inside a class, shared among all instances of that class."
+        },
+        {
+          "heading": "Data Types in Java",
+          "content": "Data types are divided into two categories: 1. Primitive Data Types: Built-in types including boolean, byte, short, int, long, float, double, and char. 2. Non-Primitive (Reference) Data Types: Includes Strings, Arrays, Classes, and Interfaces that reference objects."
+        },
+        {
+          "heading": "Type Casting",
+          "content": "Type casting is the process of converting one data type to another. Implicit (Widening) casting happens automatically when converting a smaller type to a larger type size (e.g., int to long). Explicit (Narrowing) casting requires manual syntax when converting a larger type to a smaller type (e.g., double to int), which may result in data loss."
+        }
+      ],
+      "importantPoints": [
+        "Java is statically typed, requiring explicit data type declaration for every variable.",
+        "Primitive types store actual values, while reference types store memory addresses of objects.",
+        "The default value of uninitialized instance and static variables depends on their type (e.g., 0 for int, false for boolean, null for objects).",
+        "Local variables do not receive default values and must be initialized before use.",
+        "Widening casting is safe and implicit, whereas narrowing casting requires explicit cast operators and risks precision loss."
+      ],
+      "interviewTips": [
+        "Be prepared to write code demonstrating the difference between local, instance, and static variables.",
+        "Expect questions on why Java is not 100% object-oriented (due to primitive data types).",
+        "Know the memory sizes of primitive data types (e.g., int is 4 bytes, long is 8 bytes, char is 2 bytes).",
+        "Practice questions on type promotion during arithmetic operations (e.g., byte + byte results in int)."
+      ]
+    },
+    "practice": {
+      "topic": "Variables & Data Types",
+      "questions": [
+        {
+          "question": "What is the default value of a boolean variable instance member in Java?",
+          "answer": "false",
+          "explanation": "In Java, the default value for the boolean data type for instance and class variables is false."
+        },
+        {
+          "question": "Which of the following data types has the largest memory size in Java: int, long, float, or double?",
+          "answer": "double",
+          "explanation": "A double takes 8 bytes (64 bits), which is the same as a long, but it can represent floating-point numbers with higher precision. float is 4 bytes, and int is 4 bytes."
+        },
+        {
+          "question": "What will be the output of the following expression: double d = 10 / 4; System.out.println(d);",
+          "answer": "2.0",
+          "explanation": "Both 10 and 4 are integer literals, so integer division is performed first, resulting in 2. Then, 2 is implicitly cast to a double, resulting in 2.0."
+        },
+        {
+          "question": "Which of the following is a valid identifier name in Java according to standard naming conventions?",
+          "answer": "_salary2024",
+          "explanation": "Java identifiers can start with a letter, underscore (_), or dollar sign ($). Keywords cannot be used, and they cannot start with a digit."
+        },
+        {
+          "question": "Explain why assigning a double value directly to a float variable results in a compilation error and how to fix it.",
+          "answer": "Compilation error occurs because of potential loss of precision. Fix it by using an explicit cast (float) or adding 'f' at the end of the literal.",
+          "explanation": "Double is 64-bit and float is 32-bit. Java does not allow implicit narrowing conversion from double to float. You must explicitly cast it, e.g., float f = (float) 10.5; or float f = 10.5f;"
+        }
+      ],
+      "source": "gemini"
+    },
+    "solutions": {
+      "topic": "Variables & Data Types",
+      "solutions": [
+        {
+          "question": "What is Variables & Data Types?",
+          "answer": "Variables & Data Types is an important concept in computer science.",
+          "solution": "Study the basic definition, concepts and applications of Variables & Data Types."
+        },
+        {
+          "question": "Why is Variables & Data Types important?",
+          "answer": "Variables & Data Types is useful for solving technical and programming problems.",
+          "solution": "Understanding Variables & Data Types helps students answer placement and interview questions."
+        },
+        {
+          "question": "What are the basic concepts of Variables & Data Types?",
+          "answer": "The basic concepts depend on the specific topic.",
+          "solution": "Start with the fundamental concepts of Variables & Data Types and then move to advanced topics."
+        },
+        {
+          "question": "Where is Variables & Data Types used?",
+          "answer": "Variables & Data Types is used in software development and computer science applications.",
+          "solution": "Learn practical examples of Variables & Data Types to understand where and how it is used."
+        },
+        {
+          "question": "How should a student prepare Variables & Data Types for placements?",
+          "answer": "Study concepts and practice placement questions.",
+          "solution": "Review the fundamentals, solve practice questions and revise common interview problems related to Variables & Data Types."
+        }
+      ],
+      "source": "fallback"
+    },
+    "quiz": {
+      "topic": "Variables & Data Types",
+      "questions": [
+        {
+          "question": "What is the default value of a local variable in Java?",
+          "options": [
+            "0",
+            "null",
+            "false",
+            "No default value"
+          ],
+          "answer": "No default value",
+          "explanation": "Local variables are not initialized automatically in Java; they must be initialized before use, otherwise the compiler throws an error."
+        },
+        {
+          "question": "Which of the following is not a primitive data type in Java?",
+          "options": [
+            "int",
+            "float",
+            "String",
+            "boolean"
+          ],
+          "answer": "String",
+          "explanation": "String is a class in Java and is considered a non-primitive or reference data type, while int, float, and boolean are primitive types."
+        },
+        {
+          "question": "What will be the output of: System.out.println(10 + 20 + \"Wipro\");?",
+          "options": [
+            "1020Wipro",
+            "30Wipro",
+            "30",
+            "Compilation Error"
+          ],
+          "answer": "30Wipro",
+          "explanation": "In Java, the + operator follows left-to-right associativity. First, 10 and 20 are added numerically, then the result is concatenated with the string."
+        },
+        {
+          "question": "Which data type would you use to store a 64-bit signed two's complement integer?",
+          "options": [
+            "int",
+            "short",
+            "long",
+            "byte"
+          ],
+          "answer": "long",
+          "explanation": "A long in Java is a 64-bit signed integer, whereas int is 32-bit, short is 16-bit, and byte is 8-bit."
+        },
+        {
+          "question": "What happens if you try to store a 'double' value into a 'float' variable without casting?",
+          "options": [
+            "It compiles successfully",
+            "It causes a runtime error",
+            "It causes a compilation error",
+            "The value is automatically rounded"
+          ],
+          "answer": "It causes a compilation error",
+          "explanation": "A double is larger than a float (64-bit vs 32-bit). Java does not perform implicit narrowing conversion; therefore, explicit casting is required."
+        }
+      ],
+      "source": "ai"
+    }
   }
 }
