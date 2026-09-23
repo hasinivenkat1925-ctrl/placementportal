@@ -1,0 +1,14 @@
+[build]
+  publish = "frontend"
+
+[functions]
+  directory = "backend/netlify/functions"
+  node_bundler = "esbuild"
+  external_node_modules = ["express"]
+  included_files = ["backend/data/**"]
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+  force = true
