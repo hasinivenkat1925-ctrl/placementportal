@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Topic Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>📝 Placement Quiz</h1>
+
+    <h2 id="topicTitle">Quiz</h2>
+
+    <form id="quizForm"></form>
+
+    <button type="button" onclick="checkQuiz()">
+        Submit Quiz
+    </button>
+
+    <h2 id="result"></h2>
+
+    <br>
+
+    <button onclick="goTopics()">
+        ← Back to Topics
+    </button>
+
+    <button onclick="goDashboard()">
+        🏠 Dashboard
+    </button>
+
+
+    <script>
+
+        // Get selected topic
+        const params =
+            new URLSearchParams(window.location.search);
+
+        let topic =
+            params.get("topic") ||
+            localStorage.getItem("selectedTopic") ||
+            "sql";
+
+        topic = topic.toLowerCase();
+
+
+        // Questions for each topic
+        const questionBank = {
+
+            sql: [
+                {
+                    question: "What does SQL stand for?",
+                    options: [
+                        "Structured Query Language",
+                        "Simple Query Language",
+                        "System Query Language"
+                    ],
+                    answer: 0
+                },
+                {
+                    question: "Which command is used to retrieve data from a database?",
+                    options: [
+                        "GET",
+                        "SELECT",
+                        "FETCH"
+                    ],
+                    answer: 1
+                },
+                {
+                    question: "Which SQL clause is used to filter records?",
+                    options: [
+                        "WHERE",
+                        "FILTER",
+                        "CHECK"
+                    ],
+                    answer: 0
+                }
+            ],
+
+
+            java: [
+                {
+                    question: "Which keyword is used to create a class in Java?",
+                    options: [
+                        "class",
+                        "create",
+                        "new"
+                    ],
+                    answer: 0
+                },
+                {
+                    question: "Which method is the starting point of a Java program?",
+                    options: [
+                        "start()",
+                        "main()",
+                        "run()"
+                    ],
+                    answer: 1
+                },
+                {
+                    question: "Which concept allows the same method name with different parameters?",
+                    options: [
+                        "Inheritance",
+                        "Encapsulation",
+                        "Method Overloading"
+                    ],
+                    answer: 2
+                }
+            ],
+
+
+            python: [
+                {
+                    question: "Which symbol is used for comments in Python?",
+                    options: [
+                        "//",
+                        "#",
+                        "/*"
+                    ],
+                    answer: 1
+                },
+                {
+                    question: "Which function is used to display output in Python?",
+                    options: [
+                        "print()",
+                        "display()",
+                        "output()"
+                    ],
+                    answer: 0
+                },
+                {
+                    question: "Which of these is a Python list?",
+                    options: [
+                        "{1, 2, 3}",
+                        "[1, 2, 3]",
+                        "(1, 2, 3)"
+                    ],
+                    answer: 1
+                }
+            ],
+
+
+            html: [
+                {
+                    question: "What does HTML stand for?",
+                    options: [
+                        "Hyper Text Markup Language",
+                        "High Text Machine Language",
+                        "Hyper Tool Markup Language"
+                    ],
+                    answer: 0
+                },
+                {
+                    question: "Which tag is used for the largest heading?",
+                    options: [
+                        "<h6>",
+                        "<heading>",
+                        "<h1>"
+                    ],
+                    answer: 2
+                },
+                {
+                    question: "Which tag is used to create a link?",
+                    options: [
+                        "<a>",
+                        "<link>",
+                        "<url>"
+                    ],
+                    answer: 0
+                }
+            ],
+
+
+            css: [
+                {
+                    question: "What does CSS stand for?",
+                    options: [
+                        "Computer Style Sheets",
+                        "Cascading Style Sheets",
+                        "Creative Style System"
+                    ],
+                    answer: 1
+                },
+                {
+                    question: "Which property changes text color?",
+                    options: [
+                        "font-color",
+                        "text-color",
+                        "color"
+                    ],
+                    answer: 2
+                },
+                {
+                    question: "Which symbol represents a class selector?",
+                    options: [
+                        "#",
+                        ".",
+                        "*"
+                    ],
+                    answer: 1
+                }
+            ],
+
+
+            javascript: [
+                {
+                    question: "Which keyword declares a variable in JavaScript?",
+                    options: [
+                        "let",
+                        "integer",
+                        "string"
+                    ],
+                    answer: 0
+                },
+                {
+                    question: "Which function displays a message box?",
+                    options: [
+                        "message()",
+                        "alert()",
+                        "show()"
+                    ],
+                    answer: 1
+                },
+                {
+                    question: "Which symbol is used for strict equality?",
+                    options: [
+                        "==",
+                        "=",
+                        "==="
+                    ],
+                    answer: 2
+                }
+            ],
+
+
+            aptitude: [
+                {
+                    question: "What is 20% of 100?",
+                    options: [
+                        "10",
+                        "20",
+                        "30"
+                    ],
+                    answer: 1
+                },
+                {
+                    question: "What is 12 × 5?",
+                    options: [
+                        "50",
+                        "60",
+                        "70"
+                    ],
+                    answer: 1
+                },
+                {
+                    question: "If a train travels 60 km in 1 hour, how far does it travel in 2 hours?",
+                    options: [
+                        "120 km",
+                        "100 km",
+                        "90 km"
+                    ],
+                    answer: 0
+                }
+            ],
+
+
+            "data structures": [
+                {
+                    question: "Which data structure follows FIFO?",
+                    options: [
+                        "Stack",
+                        "Queue",
+                        "Tree"
+                    ],
+                    answer: 1
+                },
+                {
+                    question: "Which data structure follows LIFO?",
+                    options: [
+                        "Queue",
+                        "Stack",
+                        "Array"
+                    ],
+                    answer: 1
+                },
+                {
+                    question: "Which data structure stores elements in index positions?",
+                    options: [
+                        "Array",
+                        "Queue",
+                        "Stack"
+                    ],
+                    answer: 0
+                }
+            ]
+
+        };
+
+
+        // If topic doesn't exist, use SQL
+        if (!questionBank[topic]) {
+            topic = "sql";
+        }
+
+
+        const questions = questionBank[topic];
+
+
+        // Show topic name
+        document.getElementById("topicTitle").innerText =
+            topic.toUpperCase() + " Quiz";
+
+
+        // Display questions
+        const quizForm =
+            document.getElementById("quizForm");
+
+
+        questions.forEach(function(q, index) {
+
+            let html = `
+                <div>
+                    <h3>${index + 1}. ${q.question}</h3>
+            `;
+
+
+            q.options.forEach(function(option, optionIndex) {
+
+                html += `
+                    <input
+                        type="radio"
+                        name="q${index}"
+                        value="${optionIndex}"
+                    >
+                    ${option}
+                    <br>
+                `;
+
+            });
+
+
+            html += `
+                </div>
+                <hr>
+            `;
+
+
+            quizForm.innerHTML += html;
+
+        });
+
+
+        // Check answers
+        function checkQuiz() {
+
+            let score = 0;
+
+
+            questions.forEach(function(q, index) {
+
+                const selected =
+                    document.querySelector(
+                        'input[name="q' + index + '"]:checked'
+                    );
+
+
+                if (
+                    selected &&
+                    Number(selected.value) === q.answer
+                ) {
+                    score++;
+                }
+
+            });
+
+
+            document.getElementById("result").innerText =
+                "Your Score: " +
+                score +
+                " / " +
+                questions.length;
+
+
+            // Save progress
+            let progress =
+                Math.round(
+                    (score / questions.length) * 100
+                );
+
+            localStorage.setItem("progress", progress);
+
+            localStorage.setItem("quizScore", score);
+
+            localStorage.setItem(
+                "quizTotal",
+                questions.length
+            );
+
+        }
+
+
+        function goTopics() {
+
+            window.location.href = "topics.html";
+
+        }
+
+
+        function goDashboard() {
+
+            window.location.href = "dashboard.html";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

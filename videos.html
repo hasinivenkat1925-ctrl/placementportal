@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Learning Videos</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        body {
+            background: #f4f7fb;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            color: #1f2937;
+        }
+
+        .header {
+            background: #1e3a8a;
+            color: white;
+            padding: 22px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .page-title h2 {
+            color: #1e3a8a;
+        }
+
+        .page-title p {
+            color: #64748b;
+        }
+
+        .info-card {
+            background: white;
+            padding: 22px;
+            border-radius: 14px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .video-card {
+            background: white;
+            padding: 22px;
+            margin-bottom: 18px;
+            border-radius: 14px;
+            border: 1px solid #e1e5eb;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+        }
+
+        .video-card h3 {
+            color: #1e3a8a;
+            margin-top: 0;
+        }
+
+        .video-card p {
+            color: #64748b;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .button-area {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        @media (max-width: 600px) {
+
+            .header h1 {
+                font-size: 25px;
+            }
+
+            .container {
+                padding: 0 12px;
+            }
+
+            button {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<div class="header">
+
+    <h1>🎓 Placement Preparation Portal</h1>
+
+</div>
+
+
+<div class="container">
+
+
+    <!-- PAGE TITLE -->
+
+    <div class="page-title">
+
+        <h2>🎬 Related Learning Videos</h2>
+
+        <p>
+            Learn through topic-specific videos for placement preparation.
+        </p>
+
+    </div>
+
+
+    <!-- INFORMATION -->
+
+    <div class="info-card">
+
+        <h3 id="heading"></h3>
+
+    </div>
+
+
+    <!-- VIDEOS -->
+
+    <div id="videos"></div>
+
+
+    <!-- BUTTON -->
+
+    <div class="button-area">
+
+        <button onclick="goDashboard()">
+            🏠 Dashboard
+        </button>
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+// ========================================
+// LOGIN PROTECTION
+// ========================================
+
+const loggedInUser =
+    localStorage.getItem("loggedInUser");
+
+if (!loggedInUser) {
+    window.location.href = "login.html";
+}
+
+// ========================================
+// GET COMPANY, ROLE AND TOPIC
+// ========================================
+
+const company =
+    localStorage.getItem("selectedCompany") || "";
+
+const role =
+    localStorage.getItem("selectedRole") || "";
+
+const topic =
+    localStorage.getItem("selectedTopic") || "";
+
+
+// ========================================
+// DISPLAY HEADING
+// ========================================
+
+document.getElementById("heading").innerText =
+    company +
+    " - " +
+    role +
+    " - " +
+    topic +
+    " Videos";
+
+
+// ========================================
+// VIDEO CONTAINER
+// ========================================
+
+const videoContainer =
+    document.getElementById("videos");
+
+
+// ========================================
+// TOPIC VIDEO SEARCH
+// ========================================
+
+const searchTopic =
+    topic +
+    " interview preparation";
+
+
+const searchUrl =
+    "https://www.youtube.com/results?search_query=" +
+    encodeURIComponent(searchTopic);
+
+
+// ========================================
+// DISPLAY VIDEO
+// ========================================
+
+const div =
+    document.createElement("div");
+
+
+div.className =
+    "video-card";
+
+
+div.innerHTML = `
+
+    <h3>▶️ ${topic} Interview Preparation</h3>
+
+    <p>
+        Find learning and interview preparation
+        videos related to ${topic}.
+    </p>
+
+    <a href="${searchUrl}" target="_blank">
+
+        <button>
+            ▶️ Watch Related Videos
+        </button>
+
+    </a>
+
+`;
+
+
+videoContainer.appendChild(div);
+
+
+// ========================================
+// DASHBOARD
+// ========================================
+
+function goDashboard() {
+
+    window.location.href =
+        "dashboard.html";
+
+}
+
+</script>
+
+
+</body>
+
+</html>

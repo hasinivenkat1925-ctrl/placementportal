@@ -1,0 +1,58 @@
+[
+    {
+        "company": "Accenture",
+        "role": "Data Analyst",
+        "year": 2025,
+        "type": "Previous Year",
+        "question": "What is the difference between WHERE and HAVING in SQL?",
+        "answer": "WHERE filters rows before grouping, while HAVING filters groups after GROUP BY."
+    },
+    {
+        "company": "Accenture",
+        "role": "Data Analyst",
+        "year": 2025,
+        "type": "Previous Year",
+        "question": "What is a Pivot Table?",
+        "answer": "A Pivot Table is used to summarize and analyze large amounts of data."
+    },
+    {
+        "company": "Accenture",
+        "role": "Data Analyst",
+        "year": 2025,
+        "type": "Practice",
+        "question": "What is data cleaning?",
+        "answer": "Data cleaning is the process of detecting and correcting inaccurate, incomplete or inconsistent data."
+    },
+    {
+        "company": "TCS",
+        "role": "Java Developer",
+        "year": 2025,
+        "type": "Previous Year",
+        "question": "What is method overloading in Java?",
+        "answer": "Method overloading means having multiple methods with the same name but different parameters."
+    },
+    {
+        "company": "TCS",
+        "role": "Java Developer",
+        "year": 2025,
+        "type": "Previous Year",
+        "question": "What is method overriding in Java?",
+        "answer": "Method overriding occurs when a subclass provides its own implementation of a method defined in its parent class."
+    },
+    {
+        "company": "Infosys",
+        "role": "Python Developer",
+        "year": 2025,
+        "type": "Previous Year",
+        "question": "What is the difference between a list and a tuple in Python?",
+        "answer": "A list is mutable, while a tuple is immutable."
+    },
+    {
+        "company": "Infosys",
+        "role": "Python Developer",
+        "year": 2025,
+        "type": "Practice",
+        "question": "What is a Python decorator?",
+        "answer": "A decorator is a function that modifies or extends the behavior of another function without changing its source code."
+    }
+]

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Placement Questions</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <style>
+/* =========================================
+   QUESTIONS PAGE - DARK THEME
+========================================= */
+
+html {
+    background: #0b1120 !important;
+}
+
+body {
+    background: #0b1120 !important;
+    color: #e5e7eb !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+strong,
+span,
+label {
+    color: #e5e7eb !important;
+}
+
+hr {
+    border-color: #334155 !important;
+}
+
+/* Company and role */
+
+#companyTitle {
+    color: #a78bfa !important;
+}
+
+#roleTitle {
+    color: #67e8f9 !important;
+}
+
+/* Questions area */
+
+#questions {
+    background: transparent !important;
+    color: #e5e7eb !important;
+}
+
+/* Question cards */
+
+.question-box {
+    background: #111827 !important;
+    color: #e5e7eb !important;
+
+    border: 1px solid #334155 !important;
+
+    border-radius: 14px !important;
+
+    padding: 22px !important;
+
+    margin: 18px 0 !important;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.35) !important;
+}
+
+.question-box h3 {
+    color: #a78bfa !important;
+}
+
+.question-box p {
+    color: #e5e7eb !important;
+}
+
+/* Buttons */
+
+button {
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #06b6d4
+        ) !important;
+
+    color: white !important;
+
+    border: none !important;
+
+    border-radius: 9px !important;
+}
+
+/* Error message */
+
+#questions h3 {
+    color: #f8fafc !important;
+}
+</style>
+</head>
+
+<body>
+
+    <h1>📝 Placement Questions</h1>
+
+    <h2 id="companyTitle">Company</h2>
+
+    <h3 id="roleTitle">Role</h3>
+
+    <p id="questionInfo"></p>
+
+    <hr>
+
+    <div id="questions"></div>
+
+    <br>
+
+    <button onclick="goBack()">
+        ← Back to Preparation
+    </button>
+
+    <button onclick="goDashboard()">
+        🏠 Dashboard
+    </button>
+
+
+    <script>
+// ========================================
+// LOGIN PROTECTION
+// ========================================
+
+const loggedInUser =
+    localStorage.getItem("loggedInUser");
+
+if (!loggedInUser) {
+    window.location.href = "login.html";
+}
+        // Get company and role from URL
+
+        const params =
+            new URLSearchParams(window.location.search);
+
+        const company =
+            params.get("company") ||
+            localStorage.getItem("selectedCompany") ||
+            "Company";
+
+        const role =
+            params.get("role") ||
+            localStorage.getItem("selectedRole") ||
+            "Role";
+
+
+        // Display company and role
+
+        document.getElementById("companyTitle").innerText =
+            "🏢 " + company;
+
+        document.getElementById("roleTitle").innerText =
+            "💼 " + role;
+
+        document.getElementById("questionInfo").innerText =
+            "Questions related to " + company +
+            " - " + role;
+
+
+        // Question bank
+
+        const questionBank = {
+
+            "Software Developer": [
+                "What is Object-Oriented Programming?",
+                "What is the difference between an array and a linked list?",
+                "What is the difference between a stack and a queue?",
+                "What is the time complexity of binary search?",
+                "What are the four main concepts of OOP?"
+            ],
+
+            "Java Developer": [
+                "What is the difference between JDK, JRE and JVM?",
+                "What is the difference between == and equals() in Java?",
+                "What is inheritance in Java?",
+                "What is method overloading and method overriding?",
+                "What is the difference between ArrayList and LinkedList?"
+            ],
+
+            "Python Developer": [
+                "What is the difference between a list and a tuple in Python?",
+                "What are Python dictionaries?",
+                "What is the difference between == and is in Python?",
+                "What are functions and lambda functions in Python?",
+                "What is exception handling in Python?"
+            ],
+
+            "Data Analyst": [
+                "What is SQL and why is it used in data analysis?",
+                "What is the difference between WHERE and HAVING?",
+                "What is the difference between INNER JOIN and LEFT JOIN?",
+                "What is a primary key and a foreign key?",
+                "What is the purpose of GROUP BY in SQL?"
+            ],
+
+            "Tester": [
+                "What is software testing?",
+                "What is the difference between manual testing and automation testing?",
+                "What is a test case?",
+                "What is the difference between verification and validation?",
+                "What is regression testing?"
+            ]
+
+        };
+
+
+        // Company-specific questions
+
+        const companyQuestions = {
+
+            "TCS": [
+                "What do you know about TCS?",
+                "Why do you want to join TCS?"
+            ],
+
+            "Infosys": [
+                "What do you know about Infosys?",
+                "Why do you want to join Infosys?"
+            ],
+
+            "Wipro": [
+                "What do you know about Wipro?",
+                "Why do you want to join Wipro?"
+            ],
+
+            "Accenture": [
+                "What do you know about Accenture?",
+                "Why do you want to join Accenture?"
+            ],
+
+            "Cognizant": [
+                "What do you know about Cognizant?",
+                "Why do you want to join Cognizant?"
+            ],
+
+            "NatWest": [
+                "What do you know about NatWest?",
+                "Why do you want to join NatWest?"
+            ]
+
+        };
+
+
+        // Get role questions
+
+        let questions =
+            questionBank[role] || questionBank["Software Developer"];
+
+
+        // Add company-related questions
+
+        if (companyQuestions[company]) {
+
+            questions = [
+                ...companyQuestions[company],
+                ...questions
+            ];
+        }
+
+
+        // Display questions
+
+        const questionContainer =
+            document.getElementById("questions");
+
+
+        questions.forEach((question, index) => {
+
+            const questionBox =
+                document.createElement("div");
+
+            questionBox.innerHTML = `
+                <h3>${index + 1}. ${question}</h3>
+
+                <p>
+                    Prepare a clear and detailed answer
+                    for this ${company} ${role} interview question.
+                </p>
+
+                <hr>
+            `;
+
+            questionContainer.appendChild(questionBox);
+
+        });
+
+
+        // Back to preparation
+
+        function goBack() {
+
+            window.location.href =
+                "preparation.html?company=" +
+                encodeURIComponent(company) +
+                "&role=" +
+                encodeURIComponent(role);
+        }
+
+
+        // Back to dashboard
+
+        function goDashboard() {
+
+            window.location.href =
+                "dashboard.html";
+        }
+
+    </script>
+
+</body>
+
+</html>

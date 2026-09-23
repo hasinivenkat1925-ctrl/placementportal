@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Placement Topic Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>🔍 Placement Topic Search</h1>
+
+    <p>Search for a topic you want to learn.</p>
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Enter topic"
+    >
+
+    <button onclick="searchTopic()">Search</button>
+
+    <hr>
+
+    <div id="topicResult"></div>
+
+    <hr>
+
+    <button onclick="goDashboard()">
+        ← Back to Dashboard
+    </button>
+
+
+    <script>
+
+        const topics = {
+
+            sql: {
+                name: "SQL",
+                description:
+                    "Learn SQL queries, joins, subqueries and database concepts."
+            },
+
+            java: {
+                name: "Java",
+                description:
+                    "Learn Java programming, OOP concepts, classes, objects and methods."
+            },
+
+            python: {
+                name: "Python",
+                description:
+                    "Learn Python programming, functions, lists, dictionaries and OOP."
+            },
+
+            html: {
+                name: "HTML",
+                description:
+                    "Learn HTML tags, elements, forms, tables and web page structure."
+            },
+
+            css: {
+                name: "CSS",
+                description:
+                    "Learn CSS styling, selectors, layouts, flexbox and responsive design."
+            },
+
+            javascript: {
+                name: "JavaScript",
+                description:
+                    "Learn JavaScript variables, functions, arrays, objects and DOM."
+            },
+
+            "data structures": {
+                name: "Data Structures",
+                description:
+                    "Learn arrays, linked lists, stacks, queues, trees and algorithms."
+            },
+
+            aptitude: {
+                name: "Aptitude",
+                description:
+                    "Practice quantitative aptitude, logical reasoning and verbal ability."
+            }
+        };
+
+
+        function searchTopic() {
+
+    let search =
+        document.getElementById("searchInput")
+        .value
+        .trim();
+
+    if (search === "") {
+
+        document.getElementById("topicResult").innerHTML =
+            "<p>Please enter a topic.</p>";
+
+        return;
+    }
+
+    let searchLower = search.toLowerCase();
+
+    let topicKey = Object.keys(topics).find(function(key) {
+
+        return key.toLowerCase() === searchLower ||
+               topics[key].name.toLowerCase() === searchLower;
+
+    });
+
+
+    let topic;
+
+
+    // ======================================
+    // EXISTING TOPIC
+    // ======================================
+
+    if (topicKey) {
+
+        topic = topics[topicKey];
+
+    }
+
+
+    // ======================================
+    // NEW / CUSTOM TOPIC
+    // ======================================
+
+    else {
+
+        topicKey = search;
+
+        topic = {
+
+            name: search,
+
+            description:
+                "AI-generated placement preparation resources for " +
+                search + "."
+
+        };
+
+    }
+
+
+    // Save selected topic
+
+    localStorage.setItem(
+        "selectedTopic",
+        topicKey
+    );
+
+
+    // ======================================
+    // DISPLAY TOPIC
+    // ======================================
+
+    document.getElementById("topicResult").innerHTML = `
+
+        <h2>📚 ${topic.name}</h2>
+
+        <p>${topic.description}</p>
+
+        <br>
+
+        <button onclick="openTopicResources('${topicKey}')">
+    📚 Open Topic Resources
+</button>
+
+    `;
+
+}
+function openTopicResources(topic) {
+
+    localStorage.setItem(
+        "selectedTopic",
+        topic
+    );
+
+    window.location.href =
+        "topic-preparation.html?topic=" +
+        encodeURIComponent(topic);
+
+}
+
+
+        function startQuiz(topic) {
+
+            localStorage.setItem("selectedTopic", topic);
+
+            window.location.href =
+                "quiz.html?topic=" +
+                encodeURIComponent(topic);
+        }
+
+
+        function openVideos(topic) {
+
+            let searchText =
+                encodeURIComponent(topic + " placement preparation");
+
+            window.open(
+                "https://www.youtube.com/results?search_query=" +
+                searchText,
+                "_blank"
+            );
+        }
+
+
+        function goDashboard() {
+
+            window.location.href = "dashboard.html";
+        }
+
+
+        // Automatically show topic if it came from dashboard
+        const params =
+            new URLSearchParams(window.location.search);
+
+        const topicFromURL =
+            params.get("search");
+
+        if (topicFromURL) {
+
+            document.getElementById("searchInput").value =
+                topicFromURL;
+
+            searchTopic();
+        }
+
+    </script>
+
+</body>
+</html>

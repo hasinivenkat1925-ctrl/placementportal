@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Company Preparation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>🏢 Company Placement Preparation</h1>
+
+    <hr>
+
+    <h2 id="companyTitle">Company</h2>
+
+    <h3 id="roleTitle">Role</h3>
+
+    <p id="description">
+        Prepare for your selected company and role.
+    </p>
+
+    <hr>
+
+    <h2>📚 Preparation Resources</h2>
+
+    <br>
+
+    <button onclick="openQuestions()">
+        📝 Previous Year Questions
+    </button>
+
+    <br><br>
+
+    <button onclick="openSolutions()">
+        ✅ Questions & Solutions
+    </button>
+
+    <br><br>
+
+    <button onclick="openVideos()">
+        🎬 Related Animated Videos
+    </button>
+
+    <br><br>
+
+    <button onclick="openQuiz()">
+        🧠 Company Quiz
+    </button>
+
+    <hr>
+
+    <button onclick="goDashboard()">
+        ← Back to Dashboard
+    </button>
+
+
+    <script>
+// ========================================
+// LOGIN PROTECTION
+// ========================================
+
+const loggedInUser =
+    localStorage.getItem("loggedInUser");
+
+if (!loggedInUser) {
+    window.location.href = "login.html";
+}
+        // Get company and role from URL
+
+        const params =
+            new URLSearchParams(window.location.search);
+
+        const company =
+            params.get("company") || "Not Selected";
+
+        const role =
+            params.get("role") || "Not Selected";
+
+
+        // Display company and role
+
+        document.getElementById("companyTitle").innerText =
+            "🏢 " + company;
+
+        document.getElementById("roleTitle").innerText =
+            "💼 " + role;
+
+        document.getElementById("description").innerText =
+            "Preparation resources for " +
+            company +
+            " - " +
+            role;
+
+
+        // Save selected company and role
+
+        localStorage.setItem(
+            "selectedCompany",
+            company
+        );
+
+        localStorage.setItem(
+            "selectedRole",
+            role
+        );
+
+
+        // Open Previous Year Questions
+
+        function openQuestions() {
+
+            window.location.href =
+                "questions.html?company=" +
+                encodeURIComponent(company) +
+                "&role=" +
+                encodeURIComponent(role);
+        }
+
+
+        // Open Questions and Solutions
+
+        function openSolutions() {
+
+            window.location.href =
+                "solutions.html?company=" +
+                encodeURIComponent(company) +
+                "&role=" +
+                encodeURIComponent(role);
+        }
+
+
+        // Open related YouTube videos
+
+        function openVideos() {
+
+            let search =
+                encodeURIComponent(
+                    company +
+                    " " +
+                    role +
+                    " placement preparation"
+                );
+
+            window.open(
+                "https://www.youtube.com/results?search_query=" +
+                search,
+                "_blank"
+            );
+        }
+
+
+        // Open Company Quiz
+
+        function openQuiz() {
+
+            window.location.href =
+                "company-quiz.html?company=" +
+                encodeURIComponent(company) +
+                "&role=" +
+                encodeURIComponent(role);
+        }
+
+
+        // Back to Dashboard
+
+        function goDashboard() {
+
+            window.location.href =
+                "dashboard.html";
+        }
+
+    </script>
+
+</body>
+
+</html>

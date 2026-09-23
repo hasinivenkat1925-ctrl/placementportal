@@ -1,0 +1,1947 @@
+/* =========================================
+   PLACEMENT PREPARATION PORTAL
+   PROFESSIONAL UI THEME
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* =========================================
+   GLOBAL WEBSITE THEME
+========================================= */
+
+:root {
+
+    --primary: #8b5cf6;
+    --primary-dark: #7c3aed;
+    --primary-light: #2e1065;
+
+    --secondary: #06b6d4;
+    --secondary-light: #083344;
+
+    --background: #0b1120;
+    --card: #111827;
+    --card-light: #1e293b;
+
+    --dark: #020617;
+    --white: #ffffff;
+
+    --text: #e5e7eb;
+    --heading: #f8fafc;
+    --muted: #94a3b8;
+
+    --border: #334155;
+
+    --success: #22c55e;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+
+    --shadow:
+        0 8px 25px rgba(0, 0, 0, 0.35);
+
+    --shadow-hover:
+        0 15px 35px rgba(0, 0, 0, 0.5);
+
+    --radius: 14px;
+}
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(139, 92, 246, 0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(6, 182, 212, 0.08),
+            transparent 30%
+        ),
+        var(--background);
+
+    color: var(--text);
+
+    line-height: 1.6;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color: white;
+
+    padding: 18px 5%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(79, 70, 229, 0.20);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+}
+
+.header h1 {
+    color: white;
+
+    font-size: 25px;
+
+    font-weight: 700;
+}
+
+/* =========================================
+   LOGOUT BUTTON
+   ========================================= */
+
+.logout {
+    background: white;
+
+    color: var(--primary);
+
+    border: none;
+
+    padding: 10px 20px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.25s ease;
+}
+
+.logout:hover {
+    background: #eff6ff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+   ========================================= */
+
+.container {
+    width: 90%;
+
+    max-width: 1150px;
+
+    margin: 35px auto;
+}
+
+
+/* =========================================
+   WELCOME SECTION
+   ========================================= */
+
+.welcome {
+    margin-bottom: 28px;
+}
+
+.welcome h2 {
+    margin-bottom: 8px;
+
+    color: var(--dark);
+
+    font-size: 28px;
+}
+
+.welcome p {
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.card {
+    background: var(--card);
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+    border-radius: var(--radius);
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: var(--shadow-hover);
+}
+
+/* =========================================
+   PROGRESS BAR
+   ========================================= */
+
+.progress-bar {
+    width: 100%;
+
+    height: 20px;
+
+    background: #e2e8f0;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin-top: 15px;
+}
+
+.progress {
+    width: 0%;
+
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    border-radius: 20px;
+
+    transition: width 0.5s ease;
+}
+
+/* =========================================
+   SEARCH
+   ========================================= */
+
+.search-box {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 15px;
+}
+
+.search-box input {
+    flex: 1;
+
+    padding: 13px 15px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.2s ease;
+
+    background: white;
+}
+
+.search-box input:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.10);
+}
+
+.search-box button {
+    padding: 12px 25px;
+
+    border: none;
+
+    background: var(--primary);
+
+    color: white;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: 0.25s ease;
+}
+
+.search-box button:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px
+        rgba(37, 99, 235, 0.25);
+}
+
+
+/* =========================================
+   SELECT
+   ========================================= */
+
+select {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    margin-top: 10px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: var(--text);
+
+    font-size: 15px;
+
+    outline: none;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+select:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================================
+   PREPARATION BUTTONS
+   ========================================= */
+
+.actions {
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-top: 18px;
+}
+
+.actions button {
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.25s ease;
+}
+
+.actions button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px
+        rgba(79, 70, 229, 0.25);
+}
+
+
+/* =========================================
+   GENERAL BUTTON
+   ========================================= */
+
+button {
+    font-family: inherit;
+}
+
+button:focus {
+    outline: 3px solid
+        rgba(37, 99, 235, 0.15);
+}
+
+
+/* =========================================
+   LINKS
+   ========================================= */
+
+a {
+    color: var(--primary);
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+
+/* =========================================
+   QUESTION BOX
+   ========================================= */
+
+.question-box {
+    background: white;
+
+    padding: 22px;
+
+    margin: 18px 0;
+
+    border-radius: 12px;
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+}
+
+.question-box h3 {
+    color: var(--dark);
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================
+   TABLE
+   ========================================= */
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow);
+}
+
+th {
+    background: var(--dark);
+
+    color: white;
+
+    padding: 13px;
+
+    text-align: left;
+}
+
+td {
+    padding: 12px 13px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+tr:hover td {
+    background: #f8fafc;
+}
+
+
+/* =========================================
+   BADGES
+   ========================================= */
+
+.badge {
+    display: inline-block;
+
+    padding: 5px 11px;
+
+    border-radius: 20px;
+
+    background: #dbeafe;
+
+    color: #1d4ed8;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.badge-success {
+    background: #dcfce7;
+
+    color: #15803d;
+}
+
+.badge-warning {
+    background: #fef3c7;
+
+    color: #b45309;
+}
+
+.badge-danger {
+    background: #fee2e2;
+
+    color: #b91c1c;
+}
+
+
+/* =========================================
+   ALERTS
+   ========================================= */
+
+.alert {
+    padding: 14px 18px;
+
+    border-radius: 10px;
+
+    margin: 15px 0;
+}
+
+.alert-success {
+    background: #dcfce7;
+
+    color: #166534;
+}
+
+.alert-danger {
+    background: #fee2e2;
+
+    color: #991b1b;
+}
+
+.alert-warning {
+    background: #fef3c7;
+
+    color: #92400e;
+}
+
+.alert-info {
+    background: #dbeafe;
+
+    color: #1e40af;
+}
+
+
+/* =========================================
+   HORIZONTAL LINE
+   ========================================= */
+
+hr {
+    border: none;
+
+    border-top: 1px solid var(--border);
+
+    margin: 25px 0;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    margin-top: 50px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background: var(--dark);
+
+    color: #cbd5e1;
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .header {
+        padding: 15px 20px;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .header h1 {
+        font-size: 21px;
+    }
+
+    .container {
+        width: 94%;
+
+        margin: 25px auto;
+    }
+
+    .welcome h2 {
+        font-size: 24px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box button {
+        width: 100%;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .actions button {
+        width: 100%;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    table {
+        display: block;
+
+        overflow-x: auto;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .header {
+        padding: 13px 15px;
+    }
+
+    .header h1 {
+        font-size: 19px;
+    }
+
+    .welcome h2 {
+        font-size: 22px;
+    }
+
+    .card {
+        padding: 17px;
+    }
+}
+/* =========================================
+   PROFESSIONAL DASHBOARD
+========================================= */
+
+body {
+    background:
+        linear-gradient(
+            135deg,
+            #f8f9ff 0%,
+            #eef2ff 50%,
+            #f8f9ff 100%
+        );
+
+    color: var(--text);
+}
+
+
+/* =========================================
+   DASHBOARD TITLE
+========================================= */
+
+body > h1 {
+    color: var(--heading);
+
+    font-size: 42px;
+
+    font-weight: 800;
+
+    text-align: center;
+
+    margin-top: 25px;
+
+    margin-bottom: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    -webkit-background-clip: text;
+    background-clip:text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================================
+   WELCOME MESSAGE
+========================================= */
+
+#welcomeMessage {
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color: white;
+
+    padding: 22px 28px;
+
+    border-radius: 18px;
+
+    margin: 25px 0;
+
+    text-align: center;
+
+    font-size: 25px;
+
+    box-shadow:
+        0 12px 30px
+        rgba(79, 70, 229, 0.18);
+}
+
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+body > h2 {
+    color: var(--heading);
+
+    font-size: 23px;
+
+    margin-top: 35px;
+
+    margin-bottom: 15px;
+
+    padding-left: 14px;
+
+    border-left: 5px solid var(--primary);
+}
+
+
+/* =========================================
+   PROGRESS SECTION
+========================================= */
+
+.progress-section {
+    background: rgba(255, 255, 255, 0.95);
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+    border-radius: 16px;
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+
+    transition: 0.25s ease;
+}
+
+.progress-section:hover {
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow-hover);
+}
+
+
+/* =========================================
+   PROFILE
+========================================= */
+
+.progress-section p {
+    margin: 10px 0;
+
+    color: var(--text);
+}
+
+.progress-section strong {
+    color: var(--primary);
+}
+
+
+/* =========================================
+   PROGRESS BAR
+========================================= */
+
+progress {
+    appearance: none;
+
+    width: 100%;
+
+    height: 14px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background: #e5e7eb;
+}
+
+progress::-webkit-progress-bar {
+    background: #e5e7eb;
+
+    border-radius: 20px;
+}
+
+progress::-webkit-progress-value {
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    border-radius: 20px;
+}
+
+progress::-moz-progress-bar {
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    border-radius: 20px;
+}
+
+
+/* =========================================
+   PROGRESS ITEMS
+========================================= */
+
+.topic-progress {
+    background: white;
+
+    padding: 20px;
+
+    margin: 14px 0;
+
+    border-radius: 14px;
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 4px 15px
+        rgba(79, 70, 229, 0.06);
+
+    transition: 0.25s ease;
+}
+
+.topic-progress:hover {
+    transform: translateX(5px);
+
+    border-color: #c7d2fe;
+
+    box-shadow: var(--shadow-hover);
+}
+
+.topic-progress strong {
+    color: var(--primary);
+}
+
+
+/* =========================================
+   PERFORMANCE SUMMARY
+========================================= */
+
+#performanceSummary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin: 20px 0 30px;
+}
+
+.summary-card {
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f8f9ff
+        );
+
+    padding: 25px 18px;
+
+    border-radius: 16px;
+
+    border: 1px solid var(--border);
+
+    text-align: center;
+
+    box-shadow: var(--shadow);
+
+    transition: 0.25s ease;
+}
+
+.summary-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: var(--shadow-hover);
+
+    border-color: #c7d2fe;
+}
+
+.summary-card h3 {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    margin-bottom: 10px;
+}
+
+.summary-card p {
+    color: var(--primary);
+
+    font-size: 34px;
+
+    font-weight: 800;
+
+    margin: 0;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+input,
+select {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    color: var(--text);
+
+    transition: 0.25s ease;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(79, 70, 229, 0.10);
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+button {
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 22px;
+
+    border-radius: 9px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(79, 70, 229, 0.25);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   LOGOUT BUTTON
+========================================= */
+
+body > button:first-of-type {
+    display: block;
+
+    margin: 0 auto 25px;
+
+    background: white;
+
+    color: var(--primary);
+
+    border: 1px solid #c7d2fe;
+
+    box-shadow:
+        0 4px 12px
+        rgba(79, 70, 229, 0.08);
+}
+
+body > button:first-of-type:hover {
+    background: var(--primary);
+
+    color: white;
+}
+
+
+/* =========================================
+   SEARCH AREA
+========================================= */
+
+#topicSearch {
+    width: 60%;
+
+    min-width: 250px;
+
+    padding: 13px 16px;
+
+    border-radius: 10px;
+
+    margin-right: 8px;
+}
+
+
+/* =========================================
+   COMPANY SELECTION
+========================================= */
+
+#company,
+#role {
+    min-width: 250px;
+
+    margin-bottom: 10px;
+
+    padding: 13px;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   INTERVIEW CARDS
+========================================= */
+
+.interview-progress-card {
+    background: white;
+
+    padding: 22px;
+
+    margin-bottom: 16px;
+
+    border-radius: 16px;
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+
+    transition: 0.25s ease;
+}
+
+.interview-progress-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow-hover);
+}
+
+.interview-progress-title {
+    color: var(--primary);
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================
+   HORIZONTAL LINES
+========================================= */
+
+hr {
+    border: none;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #c7d2fe,
+            transparent
+        );
+
+    margin: 35px 0;
+}
+
+
+/* =========================================
+   CLEAR PROGRESS
+========================================= */
+
+button[onclick="clearMyProgress()"] {
+    background:
+        linear-gradient(
+            135deg,
+            #dc2626,
+            #ef4444
+        );
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+    body {
+        padding: 15px;
+    }
+
+    body > h1 {
+        font-size: 32px;
+    }
+
+    #performanceSummary {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    #topicSearch {
+        width: 100%;
+
+        margin-bottom: 10px;
+    }
+
+    #company,
+    #role {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    body > h1 {
+        font-size: 27px;
+    }
+
+    #performanceSummary {
+        grid-template-columns: 1fr;
+    }
+
+    #welcomeMessage {
+        font-size: 21px;
+
+        padding: 18px;
+    }
+
+    button {
+        width: 100%;
+
+        margin: 5px 0;
+    }
+
+    #topicSearch {
+        min-width: 100%;
+    }
+
+}
+/* =========================================
+   DARK THEME - CARDS
+========================================= */
+
+.card,
+.progress-section,
+.topic-progress,
+.question-box,
+.summary-card,
+.interview-progress-card {
+    background: var(--card);
+
+    color: var(--text);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/* Card Hover */
+
+.card:hover,
+.progress-section:hover,
+.topic-progress:hover,
+.question-box:hover,
+.summary-card:hover,
+.interview-progress-card:hover {
+    transform: translateY(-4px);
+
+    border-color: var(--primary);
+
+    box-shadow: var(--shadow-hover);
+}
+
+
+/* =========================================
+   CARD HEADINGS
+========================================= */
+
+.card h2,
+.card h3,
+.progress-section h2,
+.progress-section h3,
+.question-box h2,
+.question-box h3,
+.summary-card h3 {
+    color: var(--heading);
+}
+
+
+/* =========================================
+   CARD TEXT
+========================================= */
+
+.card p,
+.progress-section p,
+.topic-progress p,
+.question-box p {
+    color: var(--text);
+}
+
+
+/* =========================================
+   SECONDARY TEXT
+========================================= */
+
+.muted-text {
+    color: var(--muted);
+}
+
+
+/* =========================================
+   SUMMARY CARDS
+========================================= */
+
+.summary-card {
+    text-align: center;
+
+    padding: 25px;
+}
+
+.summary-card h3 {
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+.summary-card p {
+    color: var(--primary);
+
+    font-size: 34px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================
+   TOPIC PROGRESS
+========================================= */
+
+.topic-progress strong {
+    color: var(--primary);
+}
+
+
+/* =========================================
+   QUESTION BOX
+========================================= */
+
+.question-box {
+    padding: 22px;
+
+    margin: 18px 0;
+}
+
+.question-box h3 {
+    color: var(--heading);
+}
+
+
+/* =========================================
+   INTERVIEW CARD
+========================================= */
+
+.interview-progress-card {
+    padding: 22px;
+
+    margin-bottom: 16px;
+}
+
+.interview-progress-title {
+    color: var(--primary);
+}
+/* =========================================
+   FINAL DARK THEME OVERRIDE
+   Applies across the entire website
+========================================= */
+
+html {
+    background: #0b1120 !important;
+}
+
+body {
+    background: #0b1120 !important;
+    color: #e5e7eb !important;
+}
+
+
+/* =========================================
+   HEADINGS
+========================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #f8fafc !important;
+}
+
+p,
+label,
+span,
+li {
+    color: #e5e7eb;
+}
+
+
+/* =========================================
+   MAIN SECTIONS / CARDS
+========================================= */
+
+.card,
+.progress-section,
+.topic-progress,
+.summary-card,
+.question-box {
+    background: #111827 !important;
+
+    color: #e5e7eb !important;
+
+    border: 1px solid #334155 !important;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.35) !important;
+}
+
+
+/* =========================================
+   PROFILE TEXT
+========================================= */
+
+.progress-section strong,
+.topic-progress strong,
+.summary-card strong {
+    color: #f8fafc !important;
+}
+
+.progress-section span,
+.topic-progress span {
+    color: #cbd5e1 !important;
+}
+
+
+/* =========================================
+   WELCOME SECTION
+========================================= */
+
+#welcomeMessage {
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #2563eb
+        ) !important;
+
+    color: white !important;
+
+    border-radius: 14px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(124, 58, 237, 0.25);
+}
+
+
+/* =========================================
+   HORIZONTAL LINES
+========================================= */
+
+hr {
+    border-color: #334155 !important;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+button {
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #06b6d4
+        ) !important;
+
+    color: white !important;
+
+    border: none !important;
+
+    border-radius: 9px !important;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 5px 15px
+        rgba(139, 92, 246, 0.2);
+
+    transition: all 0.25s ease;
+}
+
+button:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #0891b2
+        ) !important;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(139, 92, 246, 0.35);
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+input,
+select,
+textarea {
+    background: #0f172a !important;
+
+    color: #f8fafc !important;
+
+    border: 1px solid #475569 !important;
+
+    border-radius: 9px !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #94a3b8 !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+
+    border-color: #8b5cf6 !important;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(139, 92, 246, 0.2);
+}
+
+
+/* =========================================
+   SELECT OPTIONS
+========================================= */
+
+select option {
+    background: #111827;
+
+    color: #f8fafc;
+}
+
+
+/* =========================================
+   PROGRESS BAR
+========================================= */
+
+progress {
+    background: #1e293b !important;
+
+    border: none;
+
+    border-radius: 20px;
+}
+
+progress::-webkit-progress-bar {
+    background: #1e293b;
+
+    border-radius: 20px;
+}
+
+progress::-webkit-progress-value {
+    background:
+        linear-gradient(
+            90deg,
+            #8b5cf6,
+            #06b6d4
+        );
+
+    border-radius: 20px;
+}
+
+progress::-moz-progress-bar {
+    background:
+        linear-gradient(
+            90deg,
+            #8b5cf6,
+            #06b6d4
+        );
+
+    border-radius: 20px;
+}
+
+
+/* =========================================
+   SUMMARY NUMBERS
+========================================= */
+
+.summary-card p {
+    color: #a78bfa !important;
+
+    font-weight: 800;
+}
+
+
+/* =========================================
+   LINKS
+========================================= */
+
+a {
+    color: #67e8f9;
+}
+
+a:hover {
+    color: #a78bfa;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        background: #0b1120 !important;
+    }
+
+}
+/* =========================================
+   INTERVIEW PROGRESS - DARK THEME
+========================================= */
+
+#interviewProgressList > div {
+    background: #111827 !important;
+
+    color: #e5e7eb !important;
+
+    border: 1px solid #334155 !important;
+
+    border-radius: 14px !important;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.35) !important;
+
+    padding: 22px !important;
+
+    margin-bottom: 18px !important;
+}
+
+
+/* Interview company + role */
+
+#interviewProgressList h3 {
+    color: #a78bfa !important;
+
+    font-size: 20px !important;
+
+    margin-top: 0 !important;
+}
+
+
+/* Interview status text */
+
+#interviewProgressList p {
+    color: #e5e7eb !important;
+
+    font-size: 15px;
+
+    margin: 10px 0;
+}
+
+
+/* Completed / not completed */
+
+#interviewProgressList p strong {
+    color: #f8fafc !important;
+}
+
+
+/* Interview buttons */
+
+#interviewProgressList button {
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #06b6d4
+        ) !important;
+
+    color: white !important;
+
+    border: none !important;
+
+    margin-top: 10px;
+
+    margin-right: 8px;
+}
+
+
+/* Hover */
+
+#interviewProgressList button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px
+        rgba(139, 92, 246, 0.3);
+}
+/* =========================================
+   SEARCH TOPICS - DARK THEME
+========================================= */
+
+#topicSearch {
+    background: #0f172a !important;
+
+    color: #f8fafc !important;
+
+    border: 1px solid #475569 !important;
+
+    padding: 13px 16px;
+
+    border-radius: 10px;
+
+    width: 60%;
+}
+
+#topicSearch::placeholder {
+    color: #94a3b8 !important;
+}
+
+#topicSearch:focus {
+    border-color: #8b5cf6 !important;
+
+    outline: none;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(139, 92, 246, 0.2);
+}
+
+
+/* =========================================
+   COMPANY + ROLE DROPDOWNS
+========================================= */
+
+#company,
+#role {
+    background: #0f172a !important;
+
+    color: #f8fafc !important;
+
+    border: 1px solid #475569 !important;
+
+    padding: 13px;
+
+    border-radius: 10px;
+
+    min-width: 250px;
+
+    cursor: pointer;
+}
+
+#company:focus,
+#role:focus {
+    border-color: #8b5cf6 !important;
+
+    outline: none;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(139, 92, 246, 0.2);
+}
+
+
+/* Dropdown options */
+
+#company option,
+#role option {
+    background: #111827 !important;
+
+    color: #f8fafc !important;
+}
+
+
+/* =========================================
+   SECTION DESCRIPTIONS
+========================================= */
+
+body > p {
+    color: #cbd5e1 !important;
+}
+
+
+/* =========================================
+   INTERVIEW DESCRIPTION
+========================================= */
+
+#interviewProgressList > p {
+    color: #94a3b8 !important;
+}
+
+
+/* =========================================
+   SEARCH + SELECTION BUTTONS
+========================================= */
+
+button[onclick="searchTopic()"],
+button[onclick="startPreparation()"] {
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #06b6d4
+        ) !important;
+
+    color: white !important;
+}
+/* =========================================
+   SEARCH TOPICS - DARK THEME
+========================================= */
+
+#topicSearch {
+    background: #0f172a !important;
+
+    color: #f8fafc !important;
+
+    border: 1px solid #475569 !important;
+
+    padding: 13px 16px;
+
+    border-radius: 10px;
+
+    width: 60%;
+}
+
+#topicSearch::placeholder {
+    color: #94a3b8 !important;
+}
+
+#topicSearch:focus {
+    border-color: #8b5cf6 !important;
+
+    outline: none;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(139, 92, 246, 0.2);
+}
+
+
+/* =========================================
+   COMPANY + ROLE DROPDOWNS
+========================================= */
+
+#company,
+#role {
+    background: #0f172a !important;
+
+    color: #f8fafc !important;
+
+    border: 1px solid #475569 !important;
+
+    padding: 13px;
+
+    border-radius: 10px;
+
+    min-width: 250px;
+
+    cursor: pointer;
+}
+
+#company:focus,
+#role:focus {
+    border-color: #8b5cf6 !important;
+
+    outline: none;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(139, 92, 246, 0.2);
+}
+
+
+/* Dropdown options */
+
+#company option,
+#role option {
+    background: #111827 !important;
+
+    color: #f8fafc !important;
+}
+
+
+/* =========================================
+   SECTION DESCRIPTIONS
+========================================= */
+
+body > p {
+    color: #cbd5e1 !important;
+}
+
+
+/* =========================================
+   INTERVIEW DESCRIPTION
+========================================= */
+
+#interviewProgressList > p {
+    color: #94a3b8 !important;
+}
+
+
+/* =========================================
+   SEARCH + SELECTION BUTTONS
+========================================= */
+
+button[onclick="searchTopic()"],
+button[onclick="startPreparation()"] {
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #06b6d4
+        ) !important;
+
+    color: white !important;
+}
+/* =========================================
+   COMPANY PREPARATION BUTTON ALIGNMENT
+========================================= */
+
+button[onclick="openQuestions()"],
+button[onclick="openSolutions()"],
+button[onclick="openVideos()"],
+button[onclick="openQuiz()"] {
+    display: block !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
